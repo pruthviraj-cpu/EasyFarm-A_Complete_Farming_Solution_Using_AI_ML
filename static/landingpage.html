@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyFarm | Future of Farming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
+        }
+        
+        .tech-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+        }
+        
+        .drone-animation {
+            animation: droneFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes droneFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-leaf text-green-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Easy<span class="text-green-500">Farm</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-gray-900 hover:text-green-500 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Solutions</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Technology</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 glow-text">
+                        <span class="block">The Future of</span>
+                        <span class="block text-green-300">Smart Farming</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">
+                        Harnessing AI, IoT, and drone technology to revolutionize agriculture and maximize yields with minimal resources.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-green-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </button>
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-green-600 px-6 py-3 rounded-md font-medium transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-chart-line mr-2"></i> See Results
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1581093458171-2b1d7a1ba0c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                          alt="Smart Farming"
+                          class="rounded-xl shadow-2xl border-4 border-white drone-animation">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-seedling text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Crop Health</p>
+                                <p class="font-bold text-gray-800">98% Optimal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-tint text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Water Saved</p>
+                                <p class="font-bold text-gray-800">40% Less</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-green-500 text-4xl mb-3">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">150+</h3>
+                    <p class="text-gray-500">AI-Powered Farms</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">30%</h3>
+                    <p class="text-gray-500">Higher Yields</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-yellow-500 text-4xl mb-3">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">50%</h3>
+                    <p class="text-gray-500">Water Savings</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-purple-500 text-4xl mb-3">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-2">24/7</h3>
+                    <p class="text-gray-500">Monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart Farming <span class="text-green-500">Tools</span></h2>
+                <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+                    Our cutting-edge solutions combine the latest technologies to bring farming into the 21st century.
+                </p>
+            </div>
+                        
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 - Voice Bot AI -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-green-600 pulse-animation"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Voice Assistant AI</h3>
+                        <p class="text-gray-500 mb-4">
+                            Get instant farming advice through our voice-enabled AI assistant. Ask questions and get expert guidance in your local language.
+                        </p>
+                        <a href="/ai-assistant" class="text-green-500 font-medium flex items-center">
+                            Try Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 - Crop Disease Prediction -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-bug text-6xl text-red-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Crop Disease Prediction</h3>
+                        <p class="text-gray-500 mb-4">
+                            Upload images of your crops to detect diseases early and get treatment recommendations to prevent crop loss.
+                        </p>
+                        <a href="/detect" class="text-green-500 font-medium flex items-center">
+                            Detect Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 - Crop Prediction -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-seedling text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Crop Prediction</h3>
+                        <p class="text-gray-500 mb-4">
+                            Discover the optimal crops to plant based on your soil conditions, climate data, and market trends for maximum profitability.
+                        </p>
+                        <a href="/crop-recommendation" class="text-green-500 font-medium flex items-center">
+                            Predict Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 - Fertilizer Recommendation -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-prescription-bottle-alt text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Fertilizer Advisor</h3>
+                        <p class="text-gray-500 mb-4">
+                            Upload images of diseased plants and get customized fertilizer recommendations to treat specific deficiencies and diseases.
+                        </p>
+                        <a href="/fertilizer-recommendation" class="text-green-500 font-medium flex items-center">
+                            Get Advice <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Feature 5 - Government Subsidies -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-hand-holding-usd text-6xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Subsidy Finder</h3>
+                        <p class="text-gray-500 mb-4">
+                            Discover all government subsidies, grants, and financial assistance programs available for your farming operations.
+                        </p>
+                        <a href="/subsidy-finder" class="text-green-500 font-medium flex items-center">
+                            Check Eligibility <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Feature 6 - Weather Forecast -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-cloud-sun-rain text-6xl text-indigo-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Smart Weather</h3>
+                        <p class="text-gray-500 mb-4">
+                            Hyper-local weather forecasts tailored for agriculture with planting, irrigation, and harvesting recommendations.
+                        </p>
+                        <a href="#" class="text-green-500 font-medium flex items-center">
+                            View Forecast <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Showcase -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-500 to-blue-500 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Farm <span class="text-green-200">Dashboard</span></h2>
+                    <p class="text-lg opacity-90 mb-8">
+                        Our centralized dashboard gives you complete control and visibility over your farm operations from anywhere in the world.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Real-time monitoring of all farm metrics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Automated alerts for anomalies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Historical data analysis and trends</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Mobile app for on-the-go management</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-1 tech-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                              alt="Farm Dashboard"
+                              class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-3 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-mobile-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Mobile App</p>
+                                <p class="font-bold text-gray-800">Available Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Farmers <span class="text-green-500">Say</span></h2>
+                <p class="text-lg text-gray-500 max-w-3xl mx-auto">
+                    Hear from farmers who have transformed their operations with our technology.
+                </p>
+            </div>
+                        
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "EasyFarm's voice assistant helped me solve a pest problem instantly in my local language. It's like having an agronomist in my pocket!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">John Henderson</h4>
+                            <p class="text-sm text-gray-500">Corn Farmer, Iowa</p>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The crop prediction tool helped me switch to more profitable crops. My income increased by 35% in the first season!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Maria Gonzalez</h4>
+                            <p class="text-sm text-gray-500">Vineyard Owner, California</p>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "I discovered ₹50,000 in unclaimed subsidies through EasyFarm's subsidy finder. It paid for the entire service for 3 years!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Robert Wilson</h4>
+                            <p class="text-sm text-gray-500">Wheat Farmer, Kansas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform <span class="text-green-400">Your Farm?</span></h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join hundreds of farmers who are already benefiting from smart agriculture technology.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-md font-bold text-lg transition duration-300 flex items-center justify-center mx-auto sm:mx-0">
+                    <i class="fas fa-calendar-check mr-3"></i> Schedule Demo
+                </button>
+                <button class="border-2 border-gray-600 hover:border-green-500 hover:text-green-400 px-8 py-4 rounded-md font-bold text-lg transition duration-300 flex items-center justify-center mx-auto sm:mx-0">
+                    <i class="fas fa-phone-alt mr-3"></i> Contact Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-leaf text-green-500 mr-2"></i> EasyFarm
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Revolutionizing agriculture through technology for a sustainable future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Solutions</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Voice Assistant</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Crop Disease Prediction</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Crop Prediction</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Fertilizer Advisor</a></li>
+                    </ul>
+                </div>
+                                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Farm Calculator</a></li>
+                    </ul>
+                </div>
+                                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-green-500"></i> 123 Farm Tech Ave, CA
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2 text-green-500"></i> (555) 123-4567
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-green-500"></i> info@EasyFarm.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                        
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    © 2023 EasyFarm. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-green-500">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-green-500">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-green-500">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for drone icon on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const droneIcon = document.querySelector('.fa-drone-alt');
+                        
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                if(droneIcon) {
+                    droneIcon.style.transform = `rotate(${scrollPosition / 10}deg)`;
+                }
+            });
+                        
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                                        
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

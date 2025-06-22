@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Assistant | EasyFarm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .input-field {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .input-field:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .result-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-leaf text-green-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Easy<span class="text-green-500">Farm</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="/" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-green-500 px-3 py-2 text-sm font-medium">Smart Assistant</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Technology</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Hero Section -->
+            <section class="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-2xl p-8 mb-10 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                            <span class="block">Crop </span>
+                            <span class="block text-green-200">Prediction</span>
+                        </h1>
+                        <p class="text-lg opacity-90">
+                            Get personalized crop recommendations based on your soil conditions and environmental factors.
+                        </p>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-full">
+                            <i class="fas fa-robot text-5xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs -->
+            <div class="flex border-b border-gray-200 mb-8">
+                <button onclick="showTab('cropForm')" id="cropTab" class="tab-button py-3 px-6 font-medium text-gray-600 rounded-t-lg active">
+                    <i class="fas fa-seedling mr-2"></i> Crop Recommendation
+                </button>
+            </div>
+
+            <!-- Crop Recommendation Form -->
+            <form id="cropForm" class="bg-white rounded-xl shadow-md p-6 mb-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-seedling text-green-500 mr-2"></i>
+                    Crop Recommendation
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label for="N" class="block text-sm font-medium text-gray-700 mb-1">Nitrogen (N)</label>
+                        <input type="number" id="N" placeholder="Enter nitrogen level" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="P" class="block text-sm font-medium text-gray-700 mb-1">Phosphorous (P)</label>
+                        <input type="number" id="P" placeholder="Enter phosphorous level" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="K" class="block text-sm font-medium text-gray-700 mb-1">Potassium (K)</label>
+                        <input type="number" id="K" placeholder="Enter potassium level" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="temperature" class="block text-sm font-medium text-gray-700 mb-1">Temperature (°C)</label>
+                        <input type="number" id="temperature" placeholder="Enter temperature" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="humidity" class="block text-sm font-medium text-gray-700 mb-1">Humidity (%)</label>
+                        <input type="number" id="humidity" placeholder="Enter humidity" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="ph" class="block text-sm font-medium text-gray-700 mb-1">Soil pH</label>
+                        <input type="number" id="ph" placeholder="Enter soil pH" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="rainfall" class="block text-sm font-medium text-gray-700 mb-1">Rainfall (mm)</label>
+                        <input type="number" id="rainfall" placeholder="Enter rainfall" required 
+                            class="input-field w-full px-4 py-2 rounded-lg border focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-medium transition duration-300 shadow-md">
+                        <i class="fas fa-search mr-2"></i> Get Crop Recommendation
+                    </button>
+                </div>
+
+                <div id="cropResult" class="result mt-8 hidden bg-green-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Recommended Crop</h3>
+                    <div id="cropResultContent" class="text-gray-700"></div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-leaf text-green-500 mr-2"></i> EasyFarm
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Revolutionizing agriculture through technology for a sustainable future.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Solutions</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Crop Prediction</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Disease Detection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Fertilizer Advisor</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Smart Assistant</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500">Farm Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-green-500"></i> 123 Farm Tech Ave, CA
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2 text-green-500"></i> (555) 123-4567
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-green-500"></i> info@EasyFarm.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    © 2023 EasyFarm. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-green-500">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-green-500">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-green-500">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+          // Currently only cropForm is used. If you add more, toggle them here.
+          document.getElementById("cropForm").classList.add("hidden");
+          document.getElementById("cropTab").classList.remove("active");
+      
+          document.getElementById(tabId).classList.remove("hidden");
+          document.getElementById(tabId + "Tab").classList.add("active");
+        }
+      
+        // Crop Form Submission
+        document.getElementById("cropForm").addEventListener("submit", async function (e) {
+          e.preventDefault();
+      
+          const data = {
+            N: parseFloat(document.getElementById("N").value),
+            P: parseFloat(document.getElementById("P").value),
+            K: parseFloat(document.getElementById("K").value),
+            temperature: parseFloat(document.getElementById("temperature").value),
+            humidity: parseFloat(document.getElementById("humidity").value),
+            ph: parseFloat(document.getElementById("ph").value),
+            rainfall: parseFloat(document.getElementById("rainfall").value)
+          };
+      
+          try {
+            const response = await fetch("http://localhost:2025/predict-crop", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data)
+            });
+      
+            const result = await response.json();
+      
+            document.getElementById("cropResultContent").textContent = "🌱 Recommended Crop: " + result.recommended_crop;
+            document.getElementById("cropResult").classList.remove("hidden");
+      
+          } catch (error) {
+            document.getElementById("cropResultContent").textContent = "❌ Error: " + error.message;
+            document.getElementById("cropResult").classList.remove("hidden");
+          }
+        });
+      </script>
+      
+</body>
+</html>
