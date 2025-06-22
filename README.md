@@ -1,0 +1,2 @@
+# EasyFarm-A_Complete_Farming_Solution_Using_AI_ML
+ AI-ML Based Smart Agriculture Assistant | ASEP Semester 2 Project This project aims to solve multiple challenges faced by farmers using a unified, intelligent, and accessible AI-powered web platform. The system integrates five key agricultural modules — Crop Recommendation, Fertilizer Suggestion, Disease Detection, AI Chatbot Interaction, and Subsidy Retrieval — each trained and tested on real-world datasets to ensure reliability, usability, and accuracy
